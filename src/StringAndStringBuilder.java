@@ -116,5 +116,6 @@ public class StringAndStringBuilder {
     StringBuilder sb = new StringBuilder("Hello World");
     System.out.println(sb); //Hello World
 
+
   }
 }
