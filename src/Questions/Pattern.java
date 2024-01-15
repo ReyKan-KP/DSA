@@ -80,6 +80,7 @@ public class Pattern {
 //        ***
 //        **
 //        *
+
 //        pattern2(n);
 //        pattern3(n-1);
         for (int row = 0; row < 2 * n; row++) {
