@@ -1,5 +1,5 @@
 package Questions;
-
+// https://leetcode.com/problems/remove-element/
 public class RemoveElement {
     static int removeElement(int[] nums, int val) {
         int n = nums.length;
