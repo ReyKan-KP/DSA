@@ -1,5 +1,5 @@
 package Questions;
-//https://leetcode.com/problems/median-of-two-sorted-arrays/
+
 import java.util.*;
 
 public class MedianOfTwoSortedArrays {
