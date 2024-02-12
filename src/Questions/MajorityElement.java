@@ -1,5 +1,6 @@
 package Questions;
 
+// https://leetcode.com/problems/majority-element/
 import java.util.*;
 
 public class MajorityElement {
