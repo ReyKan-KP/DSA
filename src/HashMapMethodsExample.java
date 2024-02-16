@@ -1,7 +1,20 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class HashMapMethodsExample {
+  private static Map<String, Integer> sortByValues(Map<String, Integer> map) {
+    // import java.util.stream.Collectors; import this
+    return map.entrySet().stream()
+        .sorted(Map.Entry.comparingByValue())
+        .collect(
+            Collectors.toMap(
+                Map.Entry::getKey,
+                Map.Entry::getValue,
+                (e1, e2) -> e1, // If duplicates, keep the first occurrence
+                LinkedHashMap::new // Preserve the order of insertion
+                ));
+  }
+
   public static void main(String[] args) {
     // Creating a HashMap
     Map<String, Integer> hashMap = new HashMap<>();
@@ -10,6 +23,15 @@ public class HashMapMethodsExample {
     hashMap.put("Alice", 25);
     hashMap.put("Bob", 30);
     hashMap.put("Charlie", 22);
+
+    // Sorting the HashMap by values
+    List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(hashMap.entrySet());
+    sortedEntries.sort(Map.Entry.comparingByValue());
+    System.out.println("Sorted HashMap by values: " + sortedEntries);
+
+    // Use stream API to sort the entries based on values
+    Map<String, Integer> sortedMap = sortByValues(hashMap);
+    System.out.println("Sorted HashMap by values: " + sortedMap);
 
     // Displaying the HashMap
     System.out.println("HashMap: " + hashMap); // HashMap: {Alice=25, Bob=30, Charlie=22}
